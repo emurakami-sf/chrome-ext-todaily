@@ -3,13 +3,13 @@ window.addEventListener("load", () => Util.windowLoaded(contentIsReady), false);
 function contentIsReady() {
   // We want the extension to run only on jira. subdomains.
   // For example: jira.company.com
-  const DOMAIN_MATCH_PREFIX = "jira.";
+  const DOMAIN_MATCH_PREFIX = "jira";
   var domain = /:\/\/([^\/]+)/.exec(window.location.href)[1].toLowerCase();
 
-  if (!domain.startsWith("jira.")) {
-    // Disable the extension for subdomains different from .jira
-    return;
-  }
+  // if (!domain.startsWith("jira.")) {
+  //   // Disable the extension for subdomains different from .jira
+  //   return;
+  // }
 
   Util.log(`content is ready, jquery v${$.fn.jquery} was loaded`);
   Styles.init();
@@ -98,6 +98,8 @@ function contentIsReady() {
         }
 
         countDownElem.css("background-color", countdownState.color);
+        countDownElem.css("color","#000000")
+        countDownElem.css("font-size","20px")
         countDownElem.html(
           `${text} ${countdownState.text}, you have ${timeLeft} seconds left..`
         );

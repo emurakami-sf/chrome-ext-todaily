@@ -5,7 +5,7 @@
         box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4);
         text-align:center;
         height:30px;
-        font-size:20px;
+        font-size:100px;
         color: white;
         top: 41px;
         width:100%;
